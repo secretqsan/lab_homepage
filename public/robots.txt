@@ -1,1 +1,12 @@
+User-agent: *
+Allow: /
+Allow: /news/
+Allow: /members/
+Allow: /projects/
+Allow: /publications/
+Allow: /join/
 
+Disallow: /api/
+Disallow: /_nuxt/
+
+Sitemap: https://lab.example.com/sitemap.xml

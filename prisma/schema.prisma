@@ -1,0 +1,99 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Publication {
+  id      Int    @id @default(autoincrement())
+  title   String
+  authors String
+  journal String
+  volume  String
+  pages   String
+  year    Int
+  doi     String
+}
+
+model Patent {
+  id           Int    @id @default(autoincrement())
+  title        Json
+  inventors    Json
+  patentNumber String @unique
+  year         String
+}
+
+model Software {
+  id          Int    @id @default(autoincrement())
+  title       String
+  description Json
+  logo        String
+  link        String
+}
+
+model News {
+  id       Int      @id @default(autoincrement())
+  title    Json
+  summary  Json
+  image    String?
+  category Int
+  date     DateTime @db.Date
+  content  Json?
+}
+
+model Faculty {
+  id         Int     @id @default(autoincrement())
+  title      Json
+  photo      String?
+  email      String
+  research   Json
+  experience Json
+  wosid      String
+  name       Json
+}
+
+model Student {
+  id         Int     @id @default(autoincrement())
+  name       Json
+  photo      String?
+  email      String
+  enrollYear String
+  research   Json
+  degree     Int
+}
+
+model Alumni {
+  id           Int    @id @default(autoincrement())
+  name         Json
+  degree       Int
+  graduateYear String
+  position     Json?
+}
+
+model ResearchDirection {
+  id          Int       @id @default(autoincrement())
+  title       Json
+  description Json
+  image       String?
+  tags        Json
+  projects    Project[]
+}
+
+model Project {
+  id                  Int               @id @default(autoincrement())
+  title               Json
+  status              Int
+  funding             Json
+  researchDirectionId Int
+  fundingAmount       Json?
+  researchDirection   ResearchDirection @relation(fields: [researchDirectionId], references: [id], onDelete: Cascade)
+}
+
+model Gallery {
+  id        Int    @id @default(autoincrement())
+  title     Json
+  imagePath String
+}
