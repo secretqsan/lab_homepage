@@ -6,5 +6,5 @@ export default cachedEventHandler(async (event) => {
   var res = await prisma.software.findMany()
   return res
 }, {
-  maxAge: 1
+  maxAge: 30 * 60
 })
