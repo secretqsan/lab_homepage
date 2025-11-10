@@ -12,5 +12,5 @@ export default cachedEventHandler(async (event) => {
   )
   return res
 }, {
-  maxAge: 30 * 60
+  maxAge: 12* 60 * 60
 })
