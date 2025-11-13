@@ -211,7 +211,7 @@ onUnmounted(() => {
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div
             v-for="teacher in teachers"
-            class="text-center p-6 backdrop-blur-lg bg-white/10 rounded-xl transform hover:scale-105 transition-transform"
+            class="flex flex-col items-center text-center p-6 backdrop-blur-lg bg-white/10 rounded-xl transform hover:scale-105 transition-transform"
           >
             <div
               class="w-32 h-32 mx-auto rounded-full bg-cover bg-center mb-4"
@@ -222,6 +222,7 @@ onUnmounted(() => {
             <p class="text-sm text-blue-400 mt-2">
               {{ teacher.research[locale] }}
             </p>
+            <placeholder/>
             <a
               href="/members"
               class="mt-4 inline-block text-blue-400 hover:text-blue-300 flex flex-row items-center gap-1"

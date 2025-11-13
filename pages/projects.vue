@@ -51,12 +51,9 @@ useHead({
             >
               <div class="flex justify-between items-start mb-4">
                 <h4 class="text-xl font-bold text-blue-400">{{ project.title[locale] }}</h4>
-                <span 
-                  class="px-3 py-1 rounded-full text-xs font-medium" 
-                  :class="project.status == 0 ? 'bg-green-500/20 text-green-400' : 'bg-blue-500/20 text-blue-400'"
-                >
-                  {{ project.status == 0 ? $t('inProgress') : $t('completed') }}                                                          
-                </span>
+                <tag :class="project.status == 0 ? 'bg-green-500/20 text-green-400' : 'bg-blue-500/20 text-blue-400'">
+                  {{ project.status == 0 ? $t('inProgress') : $t('completed') }}
+                </tag>
               </div>
               <div class="text-gray-400 text-sm flex-row flex">
                 <p>{{ $t('fundingSource') }}: {{ project.funding[locale] }}</p>

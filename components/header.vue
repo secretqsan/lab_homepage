@@ -21,7 +21,7 @@ function closeMenu() {
       border border-[rgba(100,255,218,0.1)]
       z-50"
   >
-    <div class="flex-shrink-0">
+    <div class="flex-shrink-0 bg-white rounded-full p-0.5">
       <img src="/img/logo.png" alt="logo" class="w-10 h-10">
     </div>
     
