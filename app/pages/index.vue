@@ -64,7 +64,7 @@ onUnmounted(() => {
     >
       <div class="container mx-auto px-8 flex items-center justify-between">
         <!-- 左侧文字信息 -->
-        <div class="flex-1 space-y-8 pr-12">
+        <div class="flex-1 space-y-8 md:pr-12">
           <div class="space-y-2">
             <p class="text-lg font-medium text-blue-300">
               {{ $t("labIntro") }}
@@ -161,7 +161,7 @@ onUnmounted(() => {
     <section
       class="h-screen flex items-center bg-gradient-to-br from-gray-900 to-blue-900 text-white p-8"
     >
-      <div class="max-w-6xl mx-auto">
+      <div class="max-w-6xl mx-auto min-w-0">
         <div class="flex items-center justify-between mb-12">
           <h2 class="text-4xl font-bold">{{ $t("researchDirections") }}</h2>
           <NuxtLink
@@ -171,26 +171,28 @@ onUnmounted(() => {
             <span>{{ $t("learnMore") }}</span>
           </NuxtLink>
         </div>
-        <div class="max-w-6xl mx-auto grid grid-cols-3 grid-rows-1 gap-8">
-          <div
-            v-for="direction in directons"
-            class="flex min-w-48 flex-col backdrop-blur-lg bg-white/10 rounded-xl overflow-hidden transform hover:scale-105 transition-transform"
-          >
-            <img
-              :src="imageUrl(direction.image)"
-              :alt="direction.title"
-              class="w-full h-60"
-            />
-            <div class="p-6 w-full h-full flex flex-col">
-              <h3 class="text-2xl font-bold mb-4 text-blue-400">
-                {{ direction.title[locale] }}
-              </h3>
-              <placeholder />
-              <a
-                href="/projects"
-                class="mt-4 inline-block text-blue-400 hover:text-blue-300"
-                >{{ $t("viewDetails") }} →</a
-              >
+        <div class="w-full overflow-x-scroll overflow-y-hidden p-8">
+          <div class="max-w-6xl mx-auto grid grid-cols-3 grid-rows-1 gap-8">
+            <div
+              v-for="direction in directons"
+              class="flex min-w-64 flex-col backdrop-blur-lg bg-white/10 rounded-xl overflow-hidden transform hover:scale-105 transition-transform"
+            >
+              <img
+                :src="imageUrl(direction.image)"
+                :alt="direction.title"
+                class="w-full h-60"
+              />
+              <div class="p-6 w-full h-full flex flex-col">
+                <h3 class="text-2xl font-bold mb-4 text-blue-400">
+                  {{ direction.title[locale] }}
+                </h3>
+                <placeholder />
+                <a
+                  href="/projects"
+                  class="mt-4 inline-block text-blue-400 hover:text-blue-300"
+                  >{{ $t("viewDetails") }} →</a
+                >
+              </div>
             </div>
           </div>
         </div>
