@@ -1,10 +1,15 @@
 <script setup>
 const props = defineProps(["teacher"]);
 const { locale } = useI18n()
+function openMainpage(mainpage) {
+  if (mainpage !== "")
+    window.open(mainpage, '_blank')
+}
 </script>
 <template>
   <div
     class="flex flex-col bg-white/10 rounded-xl overflow-hidden border border-blue-400/30 shadow-lg hover:shadow-blue-400/20 transition-all duration-300"
+    @click="openMainpage(teacher.mainpage)"
   >
     <div class="aspect-square overflow-hidden">
       <img

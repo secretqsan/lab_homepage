@@ -1,5 +1,6 @@
 <script setup>
 const { locale, t } = useI18n();
+const localePath = useLocalePath();
 useHead({
   title: t("labName"),
 });
@@ -63,7 +64,7 @@ onUnmounted(() => {
     >
       <div class="container mx-auto px-8 flex items-center justify-between">
         <!-- 左侧文字信息 -->
-        <div class="w-1/2 space-y-8 pr-12">
+        <div class="flex-1 space-y-8 pr-12">
           <div class="space-y-2">
             <p class="text-lg font-medium text-blue-300">
               {{ $t("labIntro") }}
@@ -82,21 +83,21 @@ onUnmounted(() => {
           <div class="mt-8 space-y-4">
 
             <div class="flex space-x-4 mt-6">
-              <a
-                href="/projects"
+              <NuxtLink
+                :to="localePath('/projects')"
                 class="px-6 py-3 bg-blue-600 hover:bg-blue-700 rounded-lg text-white font-medium transition-colors"
-                >{{ $t("researchDirections") }}</a
+                >{{ $t("researchDirections") }}</NuxtLink
               >
-              <a
-                href="/join"
+              <NuxtLink
+                :to="localePath('/join')"
                 class="px-6 py-3 bg-transparent border border-blue-400 hover:bg-blue-900/30 rounded-lg text-blue-300 font-medium transition-colors"
-                >{{ $t("joinUs") }}</a
+                >{{ $t("joinUs") }}</NuxtLink
               >
             </div>
           </div>
         </div>
         <!-- 右侧画廊区域 -->
-        <div class="w-1/2">
+        <div class="hidden md:block md:flex-1">
           <div
             class="h-[500px] bg-blue-600/20 rounded-2xl backdrop-blur-lg border border-blue-400/30 shadow-2xl hover:scale-[1.01] duration-500 overflow-hidden relative"
           >
@@ -163,12 +164,12 @@ onUnmounted(() => {
       <div class="max-w-6xl mx-auto">
         <div class="flex items-center justify-between mb-12">
           <h2 class="text-4xl font-bold">{{ $t("researchDirections") }}</h2>
-          <a
-            href="/projects"
+          <NuxtLink
+            :to="localePath('/projects')"
             class="px-5 py-2 rounded-full bg-gradient-to-r from-blue-400 to-teal-400 text-white font-semibold text-sm transform transition-all duration-300 shadow-md hover:shadow-blue-400/50 flex items-center"
           >
             <span>{{ $t("learnMore") }}</span>
-          </a>
+          </NuxtLink>
         </div>
         <div class="max-w-6xl mx-auto grid grid-cols-3 grid-rows-1 gap-8">
           <div

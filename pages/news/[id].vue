@@ -2,8 +2,7 @@
 const route = useRoute()
 const id = route.params.id
 const { locale } = useI18n()
-// 示例新闻数据
-const { data: news } = await useFetch('/api/news', {params: {id: id}})
+const { data: news } = useFetch('/api/news', {params: {id: id}})
 </script>
 
 <template>
@@ -20,14 +19,7 @@ const { data: news } = await useFetch('/api/news', {params: {id: id}})
             <span>{{ formatDate(news.date) }}</span>
           </div>
         </div>
-
-        <!-- 新闻内容 -->
-        <!--<div class="prose prose-invert max-w-none">
-          <div class="whitespace-pre-wrap text-gray-300">
-            {{ news.content[locale] }}
-          </div>
-        </div>-->
-         <MDC :value="news.content[locale]" />
+        <MDC :value="news.content[locale]" />
 
         <!-- 返回按钮 -->
         <div class="pt-8">

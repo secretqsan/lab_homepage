@@ -2,11 +2,13 @@
 const props = defineProps(["news"]);
 const { locale } = useI18n();
 const categories = ["all", "research", "academic", "talent", "announcement"];
-
+function navigateToNewsDetail(id) {
+  window.open(`/news/${id}`, '_self');
+}
 </script>
 <template>
   <div
-    @click="$router.push('/news/read/' + news.id)"
+    @click="navigateToNewsDetail(news.id)"
     class="bg-white/10 backdrop-blur-lg rounded-xl overflow-hidden border border-blue-400/30 shadow-lg hover:shadow-blue-400/20 transition-all duration-300 flex flex-col group"
   >
     <div class="h-48 overflow-hidden">

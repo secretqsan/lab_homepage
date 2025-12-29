@@ -39,5 +39,5 @@ export default cachedEventHandler(async (event) => {
     return res
   }
 }, {
-  maxAge: 12 * 60 * 60
+  maxAge: Number(process.env.cache_time) * 60
 });

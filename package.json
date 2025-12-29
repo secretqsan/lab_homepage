@@ -11,13 +11,13 @@
   },
   "dependencies": {
     "@nuxtjs/i18n": "9.3.1",
-    "@nuxtjs/mdc": "^0.18.0",
+    "@nuxtjs/mdc": "^0.18.4",
     "@nuxtjs/tailwindcss": "6.13.2",
-    "@prisma/client": "^6.19.0",
-    "nuxt": "^3.17.3",
+    "@prisma/client": "^6.19.1",
+    "nuxt": "^3.20.2",
     "primeicons": "^7.0.0",
-    "prisma": "^6.19.0",
-    "vue": "^3.5.13",
-    "vue-router": "^4.5.1"
+    "prisma": "^6.19.1",
+    "vue": "^3.5.26",
+    "vue-router": "^4.6.4"
   }
 }

@@ -53,6 +53,7 @@ model Faculty {
   experience Json
   wosid      String
   name       Json
+  mainpage   String
 }
 
 model Student {

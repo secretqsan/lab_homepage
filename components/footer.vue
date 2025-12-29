@@ -49,6 +49,11 @@
               {{ $t('collegeOfChemistry') }}
             </a>
           </li>
+          <li>
+            <a href="https://www.zhuylgroup.com/" target="_blank" class="hover:text-blue-400">
+              {{ $t('youlaingZhuGroup') }}
+            </a>
+          </li>
         </ul>
       </div>
       <div>
