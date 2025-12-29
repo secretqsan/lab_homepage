@@ -29,13 +29,13 @@ const showAllAlumni = ref(false) // 是否显示全部校友
       </div>
     </div>
 
-    <!-- 博士后 -->
+    <!-- 博士后
     <div id="postdocs" class="max-w-6xl mx-auto mb-24">
       <h2 class="text-3xl font-bold mb-8 text-center bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-teal-400">{{ $t('postdocs') }}</h2>
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4">
         <member-student-card v-for="(postdoc, index) in students.filter(student => student.degree == 2)" :key="index" :student="postdoc" />
       </div>
-    </div>
+    </div> -->
 
     <!-- 研究生 -->
     <div id="students" class="max-w-6xl mx-auto mb-24">

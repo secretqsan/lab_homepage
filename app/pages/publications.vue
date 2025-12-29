@@ -23,16 +23,16 @@ const showAllPapers = ref(false)
       <h1 class="text-5xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-teal-400">
         {{ $t('publications') }}
       </h1>
-      <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+      <!--<p class="text-xl text-gray-300 max-w-3xl mx-auto">
         {{ $t('publicationsDesc') }}
-      </p>
+      </p>-->
     </div>
 
     <!-- 论文发表 -->
     <section class="max-w-6xl mx-auto mb-24">
       <h2 class="text-3xl font-bold mb-8 text-center">{{ $t('publishedPapers') }}</h2>
       
-      <div v-for="(yearGroup, index) in showAllPapers ? publications : publications.slice(0, 2)" :key="index" class="mb-12">
+      <div v-for="(yearGroup, index) in showAllPapers ? publications : publications.slice(0, 3)" :key="index" class="mb-12">
         <div class="flex items-center mb-6">
           <div class="w-24 h-24 rounded-full bg-blue-500 flex items-center justify-center text-3xl font-bold shadow-lg shadow-blue-500/30">
             {{ yearGroup.year }}
@@ -42,7 +42,7 @@ const showAllPapers = ref(false)
         
         <div class="space-y-6 ml-12">
           <div 
-            v-for="(paper, paperIndex) in showAllPapers ? yearGroup.papers : yearGroup.papers.slice(0, 6)" 
+            v-for="(paper, paperIndex) in showAllPapers ? yearGroup.papers : yearGroup.papers.slice(0, 4)" 
             :key="paperIndex"
             class="p-6 backdrop-blur-lg bg-white/10 rounded-xl border border-blue-400/30 shadow-lg hover:shadow-blue-400/20 transition-all duration-300"
           >

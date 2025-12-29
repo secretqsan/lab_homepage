@@ -174,7 +174,7 @@ onUnmounted(() => {
         <div class="max-w-6xl mx-auto grid grid-cols-3 grid-rows-1 gap-8">
           <div
             v-for="direction in directons"
-            class="flex flex-col backdrop-blur-lg bg-white/10 rounded-xl overflow-hidden transform hover:scale-105 transition-transform"
+            class="flex min-w-48 flex-col backdrop-blur-lg bg-white/10 rounded-xl overflow-hidden transform hover:scale-105 transition-transform"
           >
             <img
               :src="imageUrl(direction.image)"
@@ -198,8 +198,8 @@ onUnmounted(() => {
     </section>
 
     <!-- 团队成员版面 -->
-    <section class="h-screen flex items-center bg-gray-900 text-white p-8">
-      <div class="max-w-6xl mx-auto">
+    <section class="h-screen flex items-center justify-center bg-gray-900 text-white p-8">
+      <div class="max-w-6xl min-w-0">
         <div class="flex items-center justify-between mb-12">
           <h2 class="text-4xl font-bold">{{ $t("teamMembers") }}</h2>
           <a
@@ -209,27 +209,29 @@ onUnmounted(() => {
             <span>{{ $t("learnMore") }}</span>
           </a>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div
-            v-for="teacher in teachers"
-            class="flex flex-col items-center text-center p-6 backdrop-blur-lg bg-white/10 rounded-xl transform hover:scale-105 transition-transform"
-          >
+        <div class="w-full overflow-x-scroll overflow-y-hidden p-8">
+          <div class="grid grid-cols-3 gap-8 min-w-[900px]">
             <div
-              class="w-32 h-32 mx-auto rounded-full bg-cover bg-center mb-4"
-              :style="{ backgroundImage: `url(${imageUrl(teacher.photo)})` }"
-            ></div>
-            <h3 class="text-xl font-bold">{{ teacher.name[locale] }}</h3>
-            <p class="text-gray-300">{{ teacher.title[locale] }}</p>
-            <p class="text-sm text-blue-400 mt-2">
-              {{ teacher.research[locale] }}
-            </p>
-            <placeholder/>
-            <a
-              href="/members"
-              class="mt-4 inline-block text-blue-400 hover:text-blue-300 flex flex-row items-center gap-1"
+              v-for="teacher in teachers"
+              class="flex flex-col items-center min-w-48 text-center p-6 backdrop-blur-lg bg-white/10 rounded-xl transform hover:scale-105 transition-transform"
             >
-              {{ $t("viewDetails") }} <span class="pi pi-arrow-right text-md" />
-            </a>
+              <div
+                class="w-32 h-32 mx-auto rounded-full bg-cover bg-center mb-4"
+                :style="{ backgroundImage: `url(${imageUrl(teacher.photo)})` }"
+              ></div>
+              <h3 class="text-xl font-bold">{{ teacher.name[locale] }}</h3>
+              <p class="text-gray-300">{{ teacher.title[locale] }}</p>
+              <p class="text-sm text-blue-400 mt-2">
+                {{ teacher.research[locale] }}
+              </p>
+              <placeholder/>
+              <a
+                href="/members"
+                class="mt-4 inline-block text-blue-400 hover:text-blue-300 flex flex-row items-center gap-1"
+              >
+                {{ $t("viewDetails") }} <span class="pi pi-arrow-right text-md" />
+              </a>
+            </div>
           </div>
         </div>
       </div>
